@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	display: none;
+	z-index: 99;
+}
+
+.mess {
+	position: absolute;
+	display: none;
+	padding: 10px;
+	background: #fff;
+	text-align: center;
+	z-index: 101;
+}
+/*打赏*/
+
+/*去掉圆角*/
+.modal-content {
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+#dashangerweima {
+	text-align: center
+}
+
+#dsfooter, #dserweima {
+	text-align: center
+}
+
+#dsanliu {
+	border: 0px;
+	padding: 05px 30px;
+	font-size: 18px;
+	margin-top: 10px;
+	color: #fff;
+	background-color: #00adea;
+	cursor: pointer;
+}
+
+#zfberweima, #wxerweima {
+	f ont-size: 0px;
+}
+
+#zfberweima img {
+	background: #00adea;
+	border: 2px #00adea solid;
+}
+
+#wxerweima img {
+	background: #00a70e;
+	border: 2px #00a70e solid;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('.btn').click(function() {
+$('.mask').css({'display': 'block'});
+center($('.mess'));
+check($(this).parent(), $('.btn-success'));
+});
+// 居中
+function center(obj) {
+var screenWidth = $(window).width();
+screenHeight = $(window).height(); //当前浏览器窗口的 宽高
+var scrolltop = $(document).scrollTop();//获取当前窗口距离页面顶部高度
+var objLeft = (screenWidth - obj.width())/2 ;
+var objTop = (screenHeight - obj.height())/2 + scrolltop;
+obj.css({left: objLeft + 'px', top: objTop + 'px','display': 'block'});
+//浏览器窗口大小改变时
+$(window).resize(function() {
+screenWidth = $(window).width();
+screenHeight = $(window).height();
+scrolltop = $(document).scrollTop();
+objLeft = (screenWidth - obj.width())/2 ;
+objTop = (screenHeight - obj.height())/2 + scrolltop;
+obj.css({left: objLeft + 'px', top: objTop + 'px','display': 'block'});
+});
+//浏览器有滚动条时的操作、
+$(window).scroll(function() {
+screenWidth = $(window).width();
+screenHeight = $(widow).height();
+scrolltop = $(document).scrollTop();
+objLeft = (screenWidth - obj.width())/2 ;
+objTop = (screenHeight - obj.height())/2 + scrolltop;
+obj.css({left: objLeft + 'px', top: objTop + 'px','display': 'block'});
+});
+}
+//确定取消的操作
+function check(obj, obj1) {
+obj1.click(function() {
+closed($('.mask'), $('.mess'));
+});
+}
+// 隐藏 的操作
+function closed(obj1, obj2) {
+obj1.hide();
+obj2.hide();
+}
+});
+</script>
+</head>
+<body>
+	<input type="button" class="btn" value="btn" />
+	<div>弹出确认框始终位于窗口的中间位置的测试</div>
+	<div class="mask"></div>
+	<div class="mess" id="dashang" tabindex="-1">
+		<div id="dskuang">
+			<div id="dserweima" class="modal-content">
+				<h4 id="dashangerweima">微信支付宝扫一扫付款</h4>
+
+				<div class="row">
+					<div id="zfberweima">
+						<img src="images/z.png" alt="支付宝二维码" /> <img
+							src="images/zhifubao.jpg" alt="支付宝二维码" />
+					</div>
+					<div id="wxerweima">
+						<img src="images/weixin.jpg" alt="微信二维码" /> <img
+							src="images/w.png" alt="微信二维码" />
+					</div>
+				</div>
+				<div id="dsfooter">
+					<button id="dsanliu" type="button" class="btn-success">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

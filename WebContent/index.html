@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myzhangyi.com</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/modernizr.min.js"></script>
+<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="js/plyr.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<link href="css/plyr.css" rel="stylesheet"  type="text/css">
+<link href="css/animate.min.css" rel="stylesheet"  type="text/css">
+<link href="css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="css/style.css"  rel="stylesheet" type="text/css">
+<script type="text/javascript">
+window.onload = function() { 
+	typing();
+	plyr.setup();
+	contentWayPoint();
+	}
+var str = '最好的生活是用心甘情愿的态度，过随遇而安的生活！';
+var i=0;
+function typing() {
+	var divTyping = document.getElementById('divTyping');
+	if (i < str.length) {
+		divTyping.innerHTML = str.slice(0, i++) + '|';
+		setTimeout('typing()', 200);//递归调用
+	} else {
+		divTyping.innerHTML = str;//结束打字
+	}
+}
+</script>
+
+<style type="text/css">
+/* 主页下载样式 */
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.grid {
+	padding: 0;
+	max-width: 1300px;
+	margin: 10px auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid li {
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	background: #2c3f52;
+	color: #fff;
+}
+
+.grid figcaption span:before {
+	content: 'by ';
+}
+
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: #51aded;
+	color: #fff;
+}
+
+/* Caption Style 3 */
+figcaption>h4 {
+	margin-left: 20px;
+}
+
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img, .cs-style-3 figure.cs-hover img
+	{
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption, .cs-style-3 figure.cs-hover figcaption
+	{
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+@media ( max-width : 767px) {
+	.cs-style-3 figcaption {
+		height: 100px;
+		width: 100%;
+		top: auto;
+		bottom: 0;
+		opacity: 1;
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	figure img {
+		width:100%;
+		-webkit-transform: translateY(-50px);
+		-moz-transform: translateY(-50px);
+		-ms-transform: translateY(-50px);
+		transform: translateY(-50px);
+	}
+}
+</style>
+</head>
+<body>
+	<header id="header-section">
+		<div class="container">
+			<div class="nav-header">
+			<a href="index.html">
+				<img
+					src="images/zhangyi.png"></a>
+				<nav id="menu-wrap" class="men-container">
+					<ul id="primary-menu">
+						<li><a href="category1.html">学以致用</a></li>
+						<li><a href="category2.html">软件分享</a></li>
+						<li><a href="category3.html">时光流影</a></li>
+						<li><a href="about.html">关于我</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="start">
+		<div class="overlay"></div>
+		<div class="cover topimg text-center"
+			style="background-image: url(http://www.myzhangyi.com/wp-content/themes/Kratos/images/background.jpg)">
+			<div class="desc">
+				<h2 id='divTyping'>|</h2>
+				<p>The best life is use of willing attitude, a happy-go-lucky
+					life.</p>
+				<a class="btn btn-star" href="#blog-start" id="top-Start"><span>探索更多</span></a>
+			</div>
+		</div>
+	</div>
+	<div class="blog page-default">
+		<div class="container animate-box text-center">
+			<div class="row">
+				<div class="title-text">
+					<h2>学以致用</h2>
+					<p>子曰：“温故而知新，可以为师矣。”每次学习的过程，工作中的经验都应值得我们去记录！</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<div class="post">
+						<div class="post-image">
+							<a href="http://www.myzhangyi.com/study/94.html"><img
+								src="http://www.myzhangyi.com/wp-content/uploads/2018/01/deep.jpg" /></a>
+						</div>
+						<div class="post-text">
+							<a href="http://www.myzhangyi.com/study/94.html"><h3
+									class="text-center">利用洋葱浏览器访问暗网</h3></a>
+							<p>暗网：通称只能用特殊软件、特殊授权、或对电脑做特殊设置才能连上的网络。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="post">
+						<div class="post-image">
+							<a href="http://www.myzhangyi.com/study/81.html"><img
+								src="http://www.myzhangyi.com/wp-content/uploads/2017/11/ipv6.jpg" /></a>
+						</div>
+						<div class="post-text">
+							<a href="http://www.myzhangyi.com/study/81.html"><h3
+									class="text-center">Windows下使用teredo上IPV6网站</h3></a>
+							<p>显示Teredo信息 netsh interface ipv6 show teredo 重置Teredo netsh
+								i&hellip;</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="post">
+						<div class="post-image">
+							<a href="http://www.myzhangyi.com/study/38.html"><img
+								src="http://www.myzhangyi.com/wp-content/uploads/2017/10/cpmv.jpg" /></a>
+						</div>
+						<div class="post-text">
+							<a href="http://www.myzhangyi.com/study/38.html"><h3
+									class="text-center">Linux中文件复制与移动的常用命令</h3></a>
+							<p>Linux中文件复制一般都用这两个命令，一个是cp，一个是scp。 cp --- 主要是用于在</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="index-more  animate-box">
+				<div class="text-info text-center">
+					<a href="category1.html"
+						class="btn btn-primary view-more-1">查看更多</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blog page-gray">
+		<div class="container animate-box text-center">
+			<div class="row">
+				<div
+					class="title-text">
+					<h2>软件分享</h2>
+					<p>学会分享的生活才会更加美好而有意义，越是有成就的人，越懂得分享。</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+				<div class="col-md-4 animate-box">
+					<ul class="grid">
+						<li class="cs-style-3">
+							<figure>
+								<div>
+									<img
+										src="http://www.myzhangyi.com/wp-content/uploads/2017/11/adobecc.png">
+								</div>
+								<figcaption>
+									<h4>Adobe CC 全套软件下载</h4>
+									<a href="http://www.myzhangyi.com/share/79.html">下载地址</a>
+								</figcaption>
+							</figure>
+						</li>
+
+						</ul>
+				</div>
+			</div>
+			<div class="index-more animate-box">
+				<div class="text-info text-center">
+					<a href="category2.html"
+						class="btn btn-primary view-more-1">查看更多</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blog page-default">
+		<div class="container animate-box">
+			<div class="row">
+				<div class="title-text text-center">
+					<h2>时光流影</h2>
+					<p>见证时光的流逝，每个人的人生都是绝版的，而这里记录我的生活点滴！</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row ">
+				<div class="col-6">
+					<video
+						poster="http://www.myzhangyi.com/wp-content/uploads/2017/10/zzjsqdqc.jpg"
+						style="height: 100%; width: 100%;">
+						<source src="http://yinet.oss-cn-shenzhen.aliyuncs.com/zqc.mp4"
+							type="video/mp4">
+					</video>
+				</div>
+				<div class="col-6 text-center animate-r">
+					<div class="video-text">
+						<h3 class="entry-title-new">
+							<a href="http://www.myzhangyi.com/time/26.html"
+								style="color: black;">致终将逝去的青春</a>
+						</h3>
+						<p>青春是一种令人艳羡的资本。凭着健壮的体魄，你可以支撑起一方蔚蓝天空；凭着旺盛的精力，你可以开垦出一片神奇的土地；凭着巨大的强力，你可以变得出类拔萃，令人刮目。青春是一本厚厚的书。青&hellip;</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 div-right">
+					<video>
+						<source src="video-test/movie.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="col-6 text-center animate-l">
+					<div class="video-text">
+						<h3 class="entry-title-new">
+							<a href="http://www.myzhangyi.com/time/6.html"
+								style="color: black;">贵州交职院csa协会一周年宣传片</a>
+						</h3>
+						<p>在大学期间和几个玩的好的朋友在学校组建了一个新的协会，想想当时大家斗志雄雄真的很用心，协会成立一周年的时候自己就做了这个视频来庆贺。但是现在毕业以后大家都在为自己的工作和未来努力，&hellip;</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-more">
+				<div class="text-info text-center animate-box">
+					<a href="category3.html"
+						class="btn btn-primary view-more-1">查看更多</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div id="footer">
+			<div class="cd-tool text-center">
+				<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span>
+					<span id="weixin-pic">
+						<img
+							src="http://www.myzhangyi.com/wp-content/themes/Kratos/images/weixin.png">
+					</span> </a> <a class="cd-top"> <span class="fa fa-chevron-up"> </span>
+				</a>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="text-center">
+						<p class="social-icons">
+							<a target="_blank" rel="nofollow" href="http://weibo.com/zhyi526"><i
+								class="fa fa-weibo"></i></a> <a target="_blank" rel="nofollow"
+								href="https://twitter.com/zhyi526"><i class="fa fa-twitter"></i></a>
+							<a target="_blank" rel="nofollow"
+								href="https://www.facebook.com/zhyi526"><i
+								class="fa fa-facebook-official"></i></a> <a target="_blank"
+								rel="nofollow" href="https://github.com/zhyi526"><i
+								class="fa fa-github"></i></a>
+						</p>
+						<p>
+							Copyright 2018 <a href="http://www.myzhangyi.com">张义</a>. All
+							Rights Reserved<br>
+							<a href="http://www.miitbeian.gov.cn/" rel="external nofollow"
+								target="_blank">黔ICP备16006842号-1</a><br> <a
+								href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=52011502000252"
+								rel="external nofollow" target="_blank"><i class="govimg"></i>贵公网安备
+								52011502000252号</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
